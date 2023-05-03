@@ -1,20 +1,31 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate  } from 'react-router-dom';
 import { loginWithGoogle, logout } from '../firebase';
 import '../Css/nav.css';
 
 const Nav = (props) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = async()=>{
+    await loginWithGoogle();
+    navigate('/form')
+  }
+
+  const handleLogout = async()=>{
+    await logout();
+    navigate('/')
+  }
 
   return (
     <nav className='nav'>
       <ul>
         {props.user ? (
           <>
-          <Link to={"/userStocks/" + props.user.uid}>
-              <div>My Investments</div>
-            </Link>
             <Link id='home' to="/stocks">
-              <button >Home</button>
+              <button>Home</button>
+            </Link>
+          <Link id='myinvestment' to={"/userStocks/" + props.user.uid}>
+          <button>My Investments</button>
             </Link>
             {(!props.user.photoURL) &&
             <li id='welcome'>Welcome, {props.user.displayName}</li>
@@ -29,7 +40,7 @@ const Nav = (props) => {
             }
             <li>
               <Link to='/'>
-                <button onClick={logout}>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
               </Link>
             </li>
           </>
@@ -47,7 +58,7 @@ const Nav = (props) => {
                       <button>Sign up</button>
                     </Link>
                     <Link to='/stocks'>
-                      <button onClick={loginWithGoogle}>Login with Google</button>
+                      <button onClick={handleLogin}>Login with Google</button>
                     </Link>
                       </ul>
                   </>
