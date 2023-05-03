@@ -42,10 +42,9 @@ const Main = (props) => {
         console.log(props.user)
         const token = await props.user.getIdToken();
         // console.log(token)
-                await fetch(("https://investing-buddy.herokuapp.com/users/" + id), {
+                await fetch("https://investing-buddy.herokuapp.com/users/" + id, {
                     method: 'PUT',
                     headers: {
-                        'Access-Control-Allow-Origin': 'http://localhost:3000',
                         'Content-Type': 'Application/json',
                         'Authorization': 'Bearer ' + token
                     },
@@ -62,7 +61,7 @@ const Main = (props) => {
         if (props.user) {
           const token = await props.user.getIdToken();
           console.log(token)
-               const response = await fetch(("https://investing-buddy.herokuapp.com/userstocks/" + props.user.uid), {
+               const response = await fetch("https://investing-buddy.herokuapp.com/userstocks/" + props.user.uid, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'Application/json',

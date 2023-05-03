@@ -17,7 +17,7 @@ const Form = (props) => {
     // if(newUser) {
       //redirect new user here
       await updateNewUser([], 100000, props.user.uid);
-      window.location.href = '/stocks';
+      //window.location.href = '/stocks';
     // } else if(notNewUser) {
       // Redirect registered user here
       // window.location.href = '/stocks';
@@ -36,7 +36,7 @@ const Form = (props) => {
             'Content-Type': 'Application/json',
             'Authorization': 'Bearer ' + token
           },
-          body: JSON.stringify({ownedStocks, currentMoney: 10000, uid}) // empty object for now
+          body: JSON.stringify({ownedStocks: "", currentMoney: currentMoney, uid: uid}) // empty object for now
         })
         .catch((error) => {
           console.error(error);
