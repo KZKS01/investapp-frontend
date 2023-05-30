@@ -47,7 +47,7 @@ function SignUp(props){
             </label><br/><br/>
             <label>
                 <input type="password" placeholder='Password' name="password" value={password} onChange={handlePasswordChange} required/><br/>
-            <small>Password must be longer than 6</small>
+            <small>Password must be longer than 6 characters long</small>
             </label><br/><br/>
             <input id="SignupBtn" type="submit" value="Sign Up"/><br/><br/>
             <small>Have an account?</small>
