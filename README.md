@@ -28,7 +28,7 @@
 
 * Create an account or login to access the site.
 
-Click here to visit site.....[LINK](https://thunderous-cactus-ea99a9.netlify.app/)
+Click here to visit site.....[LINK](https://investing-buddy.netlify.app/)
 
 # Future Enhancements 
  * Display updated stock information in real time

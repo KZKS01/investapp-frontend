@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState} from 'react';
 import '../Css/show.css'
+
 const Show = (props) => {
     const { id } = useParams();
     const stocks = props.stocks;
