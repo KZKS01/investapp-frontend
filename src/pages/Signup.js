@@ -38,7 +38,6 @@ function SignUp(props){
     return (
       <div className='signup-form'>
         <h1>Sign Up</h1><br/><br/>
-        <p id="error-message"></p>
         <form onSubmit={handleSignup}>
             <label>
                 <input type="text" placeholder='Display Name' name="displayName" value={displayName} onChange={handleNameChange} required/>
