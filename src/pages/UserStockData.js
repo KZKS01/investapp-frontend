@@ -27,7 +27,7 @@ const UserStockData = (props) => {
 console.log(props.userStocks)
 let totalInvestmentValues = 0;
 // if(props.userStocks !== null) {
-  if (props.userStocks && props.userStocks.ownedStocks && Array.isArray(props.userStocks.ownedStocks)) {
+  if (props.userStocks && props.userStocks.ownedStocks) {
     const validOwnedStocks = props.userStocks.ownedStocks.filter((stockItem) => stockItem[0].stockToBuy);
 
     return (
