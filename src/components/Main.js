@@ -38,7 +38,7 @@ const Main = (props) => {
     const updateOwnedStocks = async (purchasedStock, id) => {
         try {
         if (props.user) {
-        console.log(props.user)
+        // console.log(props.user)
         const token = await props.user.getIdToken();
         // console.log(token)
                 await fetch(('https://investing-buddy.herokuapp.com/users/' + id), {
@@ -60,7 +60,7 @@ const Main = (props) => {
         try {
         if (props.user) {
           const token = await props.user.getIdToken();
-          console.log(token)
+        //   console.log(token)
                const response = await fetch("https://investing-buddy.herokuapp.com/userstocks/" + props.user.uid, {
                     method: 'GET',
                     headers: {

@@ -24,7 +24,7 @@ const UserStockData = (props) => {
 // }
 // }
 
-console.log(props.userStocks)
+// console.log(props.userStocks)
 let totalInvestmentValues = 0;
 // if(props.userStocks !== null) {
   if (props.userStocks && props.userStocks.ownedStocks) {
@@ -34,7 +34,7 @@ let totalInvestmentValues = 0;
       <div className='userstockM'>
         <h1>Current Funds in Wallet: {props.userStocks.currentMoney}</h1>
         <ul>
-          {validOwnedStocks.map((stockItem) => {
+          {validOwnedStocks.map((stockItem, index) => {
             const stock = stockItem[0];
             const numberOfShares = stock.ownedShares?.[0] || 0;
             const stockPrice = stock.stockToBuy?.price || 0;
@@ -42,7 +42,7 @@ let totalInvestmentValues = 0;
 
             // Use the _id property as the key
             return (
-              <section className='userstock' key={stock._id}>
+              <section className='userstock' key={`${stock.stockToBuy.symbol}_${index}`}>
                 <li><strong>Ticker Symbol:</strong> {stock.stockToBuy.symbol}</li>
                 <li><strong>Current Price Per Share:</strong> {stockPrice}</li>
                 <li><strong>Number of shares you own:</strong> {numberOfShares}</li>
